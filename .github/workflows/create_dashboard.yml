@@ -12,7 +12,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Create Datadog Dashboard
-      uses: ./.github/actions/create-datadog-dashboard
+      uses: ./.github/workflows/actions/create-datadog-dashboard
       with:
         datadog_api_key: ${{ secrets.DATADOG_API_KEY }}
         datadog_app_key: ${{ secrets.DATADOG_APP_KEY }}
