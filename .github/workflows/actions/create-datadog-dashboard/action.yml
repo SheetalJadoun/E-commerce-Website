@@ -16,8 +16,5 @@ inputs:
 
 runs:
   using: 'docker'
-  image: Dockerfile
-
-steps:
-  - name: Create Datadog Dashboard
-    run: /entrypoint.sh ${{ inputs.datadog_api_key }} ${{ inputs.datadog_app_key }} ${{ inputs.dashboard_name }}
+  image: 'docker://datadog/datadog-ci'
+  entrypoint: '/entrypoint.sh'
