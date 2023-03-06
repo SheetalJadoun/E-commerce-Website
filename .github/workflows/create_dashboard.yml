@@ -1,37 +1,19 @@
 name: Create Datadog Dashboard
-
 on:
   push:
     branches:
       - main
 
 jobs:
-  create-dashboard:
+  create_dashboard:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
-      
+      uses: actions/checkout@v2
+
     - name: Create Datadog Dashboard
-      uses: ./.github/workflows
+      uses: ./.github/actions/create-datadog-dashboard
       with:
         datadog_api_key: ${{ secrets.DATADOG_API_KEY }}
         datadog_app_key: ${{ secrets.DATADOG_APP_KEY }}
-        title: "My Dashboard"
-        widgets: |
-          [{
-            "type": "timeseries",
-            "title": "CPU usage",
-            "queries": [
-              {
-                "query": "avg:system.cpu.user{*}"
-              }
-            ],
-            "yaxis": {
-              "scale": "linear",
-              "min": 0,
-              "max": 100
-            },
-            "autoscale": true
-          }]
+        dashboard_name: My Dashboard
