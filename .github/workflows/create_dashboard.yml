@@ -17,8 +17,8 @@ jobs:
     - name: Create Datadog Dashboard
       uses: DataDog/datadog-actions/create-dashboard@master
       with:
-        datadog_api_key: ${{ secrets.DD_API_KEY }}
-        datadog_app_key: ${{ secrets.DD_APP_KEY }}
+        datadog_api_key: ${{ secrets.DATADOG_API_KEY }}
+        datadog_app_key: ${{ secrets.DATADOG_APP_KEY }}
         title: "My Dashboard"
         widgets: |
           [{
