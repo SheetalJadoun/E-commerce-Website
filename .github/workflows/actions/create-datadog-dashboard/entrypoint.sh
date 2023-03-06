@@ -1,8 +1,8 @@
 #!/bin/sh -l
 
-datadog_api_key: ${{ secrets.DATADOG_API_KEY }}
-datadog_app_key: ${{ secrets.DATADOG_APP_KEY }}
-dashboard_name="Dashboard Template"
+datadog_api_key=$1
+datadog_app_key=$2
+dashboard_name=$3
 
 echo "Creating Datadog dashboard ${dashboard_name}..."
 
