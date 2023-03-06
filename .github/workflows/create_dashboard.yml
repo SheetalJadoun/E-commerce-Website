@@ -1,8 +1,7 @@
 name: Create Datadog Dashboard
 
 on:
-  pull_request:
-    types: [closed]
+  push:
     branches:
       - main
 
