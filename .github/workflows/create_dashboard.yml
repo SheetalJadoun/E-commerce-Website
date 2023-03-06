@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create Datadog Dashboard
-        uses: ./.github/actions/create-datadog-dashboard
+        uses: ./.github/actions/workflows/create-datadog-dashboard
         with:
           datadog_api_key: ${{ secrets.DATADOG_API_KEY }}
           datadog_app_key: ${{ secrets.DATADOG_APP_KEY }}
