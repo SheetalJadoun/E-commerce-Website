@@ -9,6 +9,9 @@ jobs:
   create_dashboard:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
       - name: Create Datadog Dashboard
         uses: ./.github/actions/create-datadog-dashboard
         with:
