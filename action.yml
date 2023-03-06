@@ -1,0 +1,23 @@
+name: Create Datadog Dashboard
+
+description: 'A GitHub Action to create a Datadog dashboard'
+
+inputs:
+  datadog_api_key:
+    description: 'Datadog API Key'
+    required: true
+  datadog_app_key:
+    description: 'Datadog Application Key'
+    required: true
+  dashboard_name:
+    description: 'Name of the Datadog dashboard to create'
+    required: true
+    default: 'My Dashboard'
+
+runs:
+  using: 'docker'
+  image: Dockerfile
+
+steps:
+  - name: Create Datadog Dashboard
+    run: /entrypoint.sh ${{ inputs.datadog_api_key }} ${{ inputs.datadog_app_key }} ${{ inputs.dashboard_name }}
