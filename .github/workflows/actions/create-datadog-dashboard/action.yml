@@ -16,5 +16,23 @@ inputs:
 
 runs:
   using: 'docker'
+<<<<<<< HEAD
   image: 'docker://datadog/datadog-ci'
   entrypoint: '/entrypoint.sh'
+=======
+  image: 'datadog/agent:latest'
+
+steps:
+  - name: Checkout code
+    uses: actions/checkout@v2
+
+  - name: Create Datadog Dashboard
+    run: |
+      # Use Datadog CLI to create dashboard and add widgets
+      datadog dashboard create --title "My Dashboard"
+      datadog widget create --type timeseries --title "CPU usage" --query "avg:system.cpu.user{*}" --yaxis "{ \"scale\": \"linear\", \"min\": 0, \"max\": 100 }" --autoscale
+      
+    env:
+      DATADOG_API_KEY: ${{ inputs.datadog_api_key }}
+      DATADOG_APP_KEY: ${{ inputs.datadog_app_key }}
+>>>>>>> 0178f79 (ooo)
