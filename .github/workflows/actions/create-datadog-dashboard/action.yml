@@ -29,5 +29,5 @@ steps:
       datadog widget create --type timeseries --title "CPU usage" --query "avg:system.cpu.user{*}" --yaxis "{ \"scale\": \"linear\", \"min\": 0, \"max\": 100 }" --autoscale
       
     env:
-      DATADOG_API_KEY: ${{ secrets.DATADOG_API_KEY }}
-      DATADOG_APP_KEY: ${{ secrets.DATADOG_APP_KEY }}
+      DATADOG_API_KEY: ${{ inputs.datadog_api_key }}
+      DATADOG_APP_KEY: ${{ inputs.datadog_app_key }}
