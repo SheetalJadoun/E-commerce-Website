@@ -16,10 +16,6 @@ inputs:
 
 runs:
   using: 'docker'
-<<<<<<< HEAD
-  image: 'docker://datadog/datadog-ci'
-  entrypoint: '/entrypoint.sh'
-=======
   image: 'datadog/agent:latest'
 
 steps:
@@ -35,4 +31,3 @@ steps:
     env:
       DATADOG_API_KEY: ${{ inputs.datadog_api_key }}
       DATADOG_APP_KEY: ${{ inputs.datadog_app_key }}
->>>>>>> 0178f79 (ooo)
