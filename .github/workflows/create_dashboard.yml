@@ -1,4 +1,5 @@
-name: Create Datadog Dashboard
+name: Main Workflow
+
 on:
   push:
     branches:
@@ -8,12 +9,9 @@ jobs:
   create_dashboard:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Create Datadog Dashboard
-      uses: ./.github/workflows/actions/create-datadog-dashboard
-      with:
-        datadog_api_key: ${{ secrets.DATADOG_API_KEY }}
-        datadog_app_key: ${{ secrets.DATADOG_APP_KEY }}
-        dashboard_name: My Dashboard
+      - name: Create Datadog Dashboard
+        uses: ./.github/actions/create-datadog-dashboard
+        with:
+          datadog_api_key: ${{ secrets.DATADOG_API_KEY }}
+          datadog_app_key: ${{ secrets.DATADOG_APP_KEY }}
+          dashboard_name: 'My Dashboard'
