@@ -11,10 +11,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: /.github/actions/my-custom-action@v2
-
+      uses: actions/checkout@v2
+      
     - name: Create Datadog Dashboard
-      uses: DataDog/datadog-actions/create-dashboard@master
+      uses: ./.github/actions
       with:
         datadog_api_key: ${{ secrets.DATADOG_API_KEY }}
         datadog_app_key: ${{ secrets.DATADOG_APP_KEY }}
