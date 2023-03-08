@@ -4,8 +4,7 @@
     "widgets":[
         {
             "id":466218297632478,
-            "definition":
-            {"title":"Core Web Vitals Overview","background_color":"vivid_green","show_title":true,"type":"group","layout_type":"ordered"}
+            "definition":{"title":"Core Web Vitals Overview","background_color":"vivid_green","show_title":true,"type":"group","layout_type":"ordered"}
         },
        {
           "id":8008817545232950,
