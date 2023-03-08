@@ -3,7 +3,7 @@ name: Create Datadog Dashboard
 on:
   push:
     branches:[main] 
-      paths:
+    paths:
       - 'shopping-pwa/**'
 
 jobs:
