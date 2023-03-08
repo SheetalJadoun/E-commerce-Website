@@ -1,4 +1,4 @@
-name: Main Workflow
+name: Create Datadog Dashboard
 
 on:
   push:
@@ -8,13 +8,16 @@ on:
 jobs:
   create_dashboard:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        
-      - name: Create Datadog Dashboard
-        uses: ./.github/actions/create-datadog-dashboard
-        with:
-          datadog_api_key: ${{ secrets.DATADOG_API_KEY }}
-          datadog_app_key: ${{ secrets.DATADOG_APP_KEY }}
-          dashboard_name: 'My Dashboard'
+
+      - name: Create dashboard
+        run: |
+          curl -X POST \
+            -H "Content-Type: application/json" \
+            -H "DD-API-KEY: ${{ secrets.DD_API_KEY }}" \
+            -H "DD-APPLICATION-KEY: ${{ secrets.DD_APP_KEY }}" \
+            -d @dashboard.json \
+            "https://api.datadoghq.com/api/v1/dashboard?api_key=${{ secrets.DD_API_KEY }}&application_key=${{ secrets.DD_APP_KEY }}"
