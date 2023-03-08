@@ -17,7 +17,7 @@ jobs:
         run: | 
           curl -X GET "https://api.datadoghq.com/api/v1/validate" \
             -H "Accept: application/json" \
-            -H "DD-API-KEY: ${{ secrets.DD_API_KEY }}" \
+            -H "DD-API-KEY: fc13f5c19c965e763ee4418b6124d6ec" \
             -H "DD-APPLICATION-KEY: ${{ secrets.DD_APP_KEY }}" \
         # run: |
         #   curl -X POST \
