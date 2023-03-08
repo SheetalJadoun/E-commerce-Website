@@ -2,10 +2,6 @@
     "title":"experiment Dashboard (template)",
     "description":"## EG TnL Observability\n\n**DO NOT MAKE CHANGES TO THIS DASHBOARD**\n\nThis is just a template. Clone this dashboard, or copy individual widgets into your own dashboard. Then make changes.\n\n- [Link to step-by-step guide](https://confluence.expedia.biz/display/ArchGuild/Assessing+EgTNL+Experiments+using+Core+Web+Vitals+RUM+data+in+DataDog)",
     "widgets":[
-        {
-            "id":466218297632478,
-            "definition":{"title":"Core Web Vitals Overview","background_color":"vivid_green","show_title":true,"type":"group","layout_type":"ordered"}
-        },
        {
           "id":8008817545232950,
           "definition":{
