@@ -25,4 +25,4 @@ jobs:
             -H "DD-API-KEY: fc13f5c19c965e763ee4418b6124d6ec" \
             -H "DD-APPLICATION-KEY: e81cab11be284f939be622b26cb6be6567206136" \
             -d @dashboard.json \
-            "https://api.datadoghq.com/api/v1/dashboard
+            "https://api.datadoghq.com/api/v1/dashboard"
