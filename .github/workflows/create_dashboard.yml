@@ -17,11 +17,12 @@ jobs:
         run: | 
           curl -X GET "https://api.datadoghq.com/api/v1/validate" \
             -H "Accept: application/json" \
-            -H "DD-API-KEY: ${{ secrets.DD_API_KEY }}"
-        run: |
-          curl -X POST \
-            -H "Content-Type: application/json" \
             -H "DD-API-KEY: ${{ secrets.DD_API_KEY }}" \
             -H "DD-APPLICATION-KEY: ${{ secrets.DD_APP_KEY }}" \
-            -d @dashboard.json \
-            "https://api.datadoghq.com/api/v1/dashboard?api_key=${{ secrets.DD_API_KEY }}&application_key=${{ secrets.DD_APP_KEY }}"
+        # run: |
+        #   curl -X POST \
+        #     -H "Content-Type: application/json" \
+        #     -H "DD-API-KEY: ${{ secrets.DD_API_KEY }}" \
+        #     -H "DD-APPLICATION-KEY: ${{ secrets.DD_APP_KEY }}" \
+        #     -d @dashboard.json \
+        #     "https://api.datadoghq.com/api/v1/dashboard?api_key=${{ secrets.DD_API_KEY }}&application_key=${{ secrets.DD_APP_KEY }}"
