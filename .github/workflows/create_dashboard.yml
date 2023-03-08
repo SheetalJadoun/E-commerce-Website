@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'config/shopping-pwa/**'
+      - 'config/blossom-flex/**'
 
 jobs:
   create_dashboard:
