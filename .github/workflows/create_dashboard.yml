@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'E-commerce-Website/config/shopping-pwa/**'
+      - 'config/shopping-pwa/**'
 
 jobs:
   create_dashboard:
