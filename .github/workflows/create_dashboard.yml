@@ -19,15 +19,15 @@ jobs:
         # run: | 
         #   curl -X GET "https://api.datadoghq.com/api/v1/validate" \
         #     -H "Accept: application/json" \
-        #     -H "DD-API-KEY: fc13f5c19c965e763ee4418b6124d6ec" \
-        #     -H "DD-APPLICATION-KEY: e81cab11be284f939be622b26cb6be6567206136" \
+        #     -H "DD-API-KEY: {{}}" \
+        #     -H "DD-APPLICATION-KEY: {{}}" \
         run: |
           experiment_name=$(basename "$1" .ts)
           json_payload=$(cat dashboard.json | sed "s/\"dashboard_title\": \".*\"/\"dashboard_title\": \"$experiment_name\"/")
           
           curl -X POST \
             -H "Content-Type: application/json" \
-            -H "DD-API-KEY: fc13f5c19c965e763ee4418b6124d6ec" \
-            -H "DD-APPLICATION-KEY: e81cab11be284f939be622b26cb6be6567206136" \
+            -H "DD-API-KEY: {{}}" \
+            -H "DD-APPLICATION-KEY: {{}}" \
             -d "$json_payload"
             "https://api.datadoghq.com/api/v1/dashboard"
